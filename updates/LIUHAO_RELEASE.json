@@ -1,19 +1,19 @@
 {
   "schema": "liuhao.release-manifest/1",
   "channel": "stable",
-  "generated_at": "2026-11-08T11:03:17Z",
+  "generated_at": "2026-11-08T12:23:19Z",
   "releases": [
     {
       "version": "0.1.1",
       "artifact": "liuhao-0.1.1-upgrade.zip",
-      "sha256": "3f99f7fda59c2507fbf4b5232972fa1b2e8dea4cb646fceef57c894e2b0e4023",
-      "size": 32149297,
+      "sha256": "9eaba197419570a8804e04b06c0eb0161d057415fcaaecf1d716c67cc3543224",
+      "size": 32178761,
       "notes": "LiuHao AI OS · 鎏灏智能中枢 0.1.1：安装树整包（含根级模块与 config/，不含 runtime/ 与数据目录）；不含模型权重、不含任何密钥。安装器使用项目自签名证书（非公开权威 CA）；未安装信任脚本前 Windows 仍可能提示未知发布者。 本次构建 payload 冒烟通过。（打包扫描发现 2 处运行文件里的开发目录路径字面量，见 dev-path-report.txt）",
-      "released_at": "2026-11-08T11:03:12Z",
+      "released_at": "2026-11-08T12:23:14Z",
       "files": [
         {
           "path": "LIUHAO_RELEASE.json",
-          "sha256": "61b5a33146220f565b7d20c2f79555564896e5c8d8bb9b767deac87108d1f388",
+          "sha256": "7b5ab34d1dd3f65403c4f9d345ebfe7e6ea2b2b1b95114ab606a166c68884441",
           "size": 135
         },
         {
@@ -67,13 +67,13 @@
           "size": 77204
         },
         {
-          "path": "console/assets/index-DD5VQBo5.js",
-          "sha256": "fa24a1088a070b352b31ada0453b47b205807374dfab950f54aaeb1dc826e8be",
-          "size": 659252
+          "path": "console/assets/index-zUoKa3ky.js",
+          "sha256": "10b1a5ae0ebc6e93abd4bad4b2d47d473d425bb3ee7b5f12b5213b6658efc9f7",
+          "size": 659596
         },
         {
           "path": "console/console-contract.json",
-          "sha256": "78c8e0ab42999a80447247297fc11142cfb0a2f10ec2a1090b708590f55e1c33",
+          "sha256": "c05e5cf10b1c24d2d8a2413428fded0f77b4fe0b2095c8146ddf9789f7539044",
           "size": 252
         },
         {
@@ -98,7 +98,7 @@
         },
         {
           "path": "console/index.html",
-          "sha256": "6bb912dc941df7955598a88fb3b9f0c37fb6fab8b081b7b07da0df7572a927a7",
+          "sha256": "1374d4cf1631fcc5f6c602ff97a8e874fb90cca3b1bdc17357e71a90657c6005",
           "size": 1902
         },
         {
@@ -108,7 +108,7 @@
         },
         {
           "path": "console/sw.js",
-          "sha256": "ece9ab447d3b0fe166fc05c7ced6be428b3cda651d41456929eb0be6a06fbef9",
+          "sha256": "e289e7d7fe2bc397fbb0048d1f41e090f3c69f44e40f0784fb4dd91d4e8f4fbc",
           "size": 8044
         },
         {
@@ -148,8 +148,8 @@
         },
         {
           "path": "docs/DELIVERY-CHECKLIST.md",
-          "sha256": "49147df48005b0b3aa743ed846afd66dd077dc6c08bf0e6517d06435cec08ca7",
-          "size": 88438
+          "sha256": "27f628d8e973adb8a16da663934038c0b7afbdde27bd6a1592722f47123774b4",
+          "size": 88553
         },
         {
           "path": "docs/DIAGNOSTIC-BUNDLE-READING.md",
@@ -2253,8 +2253,8 @@
         },
         {
           "path": "docs/known-gaps.md",
-          "sha256": "7091f95aaaf4d415a338f617bf2905dcca1a739fa959d2b4687b66b9fb9df675",
-          "size": 74016
+          "sha256": "a9a135ad87708c85f36a3bf25e053df3c7e105a9dc433c1bfd2d9847d423784d",
+          "size": 75904
         },
         {
           "path": "docs/l10k/test-design.md",
@@ -2283,8 +2283,8 @@
         },
         {
           "path": "docs/operations/WINDOWS-DESKTOP.md",
-          "sha256": "be4bdc8efc5d39638d118cef3f633f5bfe0ed2a062c1a80b624897d88f1723a6",
-          "size": 35124
+          "sha256": "a585f1d446692a2a357eda09605a638b563137d33abd4015e86a620a5f407c85",
+          "size": 36851
         },
         {
           "path": "docs/operations/health-check-spec.md",
@@ -2553,8 +2553,8 @@
         },
         {
           "path": "docs/test-isolation-gap.md",
-          "sha256": "573c9bdc4e0b6ee12f182af5e890f95f2b235dbad0430c32fd065afe811521ea",
-          "size": 13916
+          "sha256": "c974f585e2cb891db3d6bcd3d4a8fea946f5bd2d996fb8650695c29745e91160",
+          "size": 20185
         },
         {
           "path": "docs/tutorials/README.md",
@@ -3268,8 +3268,8 @@
         },
         {
           "path": "src/ai/tool_registry.py",
-          "sha256": "7d69aa9444d3a036266ac970890858da41c7e0613777bb8ddb8265bebbb7233b",
-          "size": 28184
+          "sha256": "3f556d878aadc06cc7f698c7c99c0842f069cf9e263704ce8c30ff7cd537a014",
+          "size": 29019
         },
         {
           "path": "src/ai/tools/__init__.py",
@@ -3563,8 +3563,8 @@
         },
         {
           "path": "src/bootstrap_log.py",
-          "sha256": "339529d2840ae81cbe0a624553156cc0d3f99e84e8b5739e7842afd2bb0cafd8",
-          "size": 3769
+          "sha256": "30751f0c661c108a99c7074bfdcffef88789ba78387ed456459e0b74d982f99a",
+          "size": 4279
         },
         {
           "path": "src/brand.json",
@@ -3658,8 +3658,8 @@
         },
         {
           "path": "src/common/input_guard.py",
-          "sha256": "c438152abbefe96a9451edfdf43c1d59e2b0e534ffa22f024f09f6adc8cf82e8",
-          "size": 14637
+          "sha256": "dc08d03005fd244b1dfdc9249017590b47a36004d9d51b8f7869e66462d68148",
+          "size": 14889
         },
         {
           "path": "src/common/instance_lock.py",
@@ -3793,8 +3793,8 @@
         },
         {
           "path": "src/desktop/__main__.py",
-          "sha256": "80080f4677c6557d064cce670da873a7f82612992e4ae93166435eb8f6a5a4e7",
-          "size": 11518
+          "sha256": "3549e2bccecc73a8fee18ccf889bb226eea3b935c635164b11358c0700a54a8e",
+          "size": 11694
         },
         {
           "path": "src/desktop/_runner.py",
@@ -3978,8 +3978,8 @@
         },
         {
           "path": "src/gateway/account_memory.py",
-          "sha256": "3b3a0a3c413b502ef71b27f969d5ea80505c71edfa4feca6b7aecce05467c828",
-          "size": 43001
+          "sha256": "c246241d68f874dec4640c59289d86de71a2d2a8bddc878f3a09fcf1afa68f7c",
+          "size": 46895
         },
         {
           "path": "src/gateway/account_settings.py",
@@ -3998,8 +3998,8 @@
         },
         {
           "path": "src/gateway/ai_management.py",
-          "sha256": "f10b4046c06f03218bc692b4863a6e8e5a5a207c341cdaaea7b9686efbe3280b",
-          "size": 227710
+          "sha256": "1a2af343ef43a6dcbcd7fc8b5a161047cf3a8017ea2b0c3a4b59ea3ae375b7d4",
+          "size": 228289
         },
         {
           "path": "src/gateway/audit.py",
@@ -4013,8 +4013,8 @@
         },
         {
           "path": "src/gateway/chat.py",
-          "sha256": "b653a4c0fdb11d1a3ff534c62b44ed1f370c8922539d9c6b717dabb299d45e2b",
-          "size": 69396
+          "sha256": "c407cfc7773a99970421a5f4efce907afc65ec9617fddfba61dbb49d392e6300",
+          "size": 70566
         },
         {
           "path": "src/gateway/console_static.py",
@@ -4033,8 +4033,8 @@
         },
         {
           "path": "src/gateway/data_portability.py",
-          "sha256": "b5d76e502f2f9705bb14a3d0157f1dd7e6c83140d3d0334b3fee9e74b2a84f2b",
-          "size": 39898
+          "sha256": "6c62a598e52550c3fa6923004864eb737def8aa78d35beb40088603a5d61e07c",
+          "size": 40264
         },
         {
           "path": "src/gateway/diagnostic_bundle.py",
@@ -4043,8 +4043,8 @@
         },
         {
           "path": "src/gateway/display.py",
-          "sha256": "472cbbc5b79230f2236a978d31eb7e8f64d1b8fc124ff2f3aa394a8911fdf970",
-          "size": 28856
+          "sha256": "fc23cba87145aeb5848a9c0455592d3ea68de32621f62a206dad738a32909419",
+          "size": 29360
         },
         {
           "path": "src/gateway/events.py",
@@ -4058,8 +4058,8 @@
         },
         {
           "path": "src/gateway/health.py",
-          "sha256": "5bb280411a0e06e50397ec04a4e1f017c31af8efb5d917e11a15d8fc36af25ab",
-          "size": 49111
+          "sha256": "b33b5a947d35670a8eca48a89a8bb3dcd445c663af1778561c7128d943219aac",
+          "size": 61183
         },
         {
           "path": "src/gateway/http_limits.py",
@@ -4068,8 +4068,8 @@
         },
         {
           "path": "src/gateway/identity.py",
-          "sha256": "6d93e95b4921659de3179034a80df03d76edfe02b23de3f7798ab7bc58221438",
-          "size": 24915
+          "sha256": "c7c48ab3eab61c9d47f2ae30ed862711ee330a1ec831f73fc5177de7633aca45",
+          "size": 25366
         },
         {
           "path": "src/gateway/kernels.py",
@@ -4093,8 +4093,8 @@
         },
         {
           "path": "src/gateway/main.py",
-          "sha256": "d8469d762d31103086459835e202954aa93a630c7e6eb1f820f527985beaa3c1",
-          "size": 128470
+          "sha256": "66a32b599e432fc7f761cf756872f59cdf055429cc33b174fa684b132d542e53",
+          "size": 130215
         },
         {
           "path": "src/gateway/models.py",
@@ -4548,8 +4548,8 @@
         },
         {
           "path": "src/kernels/execution/__init__.py",
-          "sha256": "4930468da55a6c2a58458a3473c6a28796061bdd0550756ff9ffbb7803445ec7",
-          "size": 108954
+          "sha256": "51a5fb4c49c6686a03de86f886ae8929be65b0a52e5036feff548899a554aabd",
+          "size": 123025
         },
         {
           "path": "src/kernels/execution/_journal.py",
@@ -5258,13 +5258,13 @@
         },
         {
           "path": "src/security/audit_logger.py",
-          "sha256": "291fa57928b02757c017e491b8e5111c7ea0ba565ef0d7b2f5fc7f3b44a83632",
-          "size": 21704
+          "sha256": "7bc5c83f2e08e0646368149a0f1cd86a8038a3e20ecc3f44dd91340b59417378",
+          "size": 21732
         },
         {
           "path": "src/security/audit_policy.py",
-          "sha256": "24fa5ae404e9d94a0bea85f94a0ed98a053ac02a505e8d25fc3d38a6af9f11d1",
-          "size": 23677
+          "sha256": "f1a037c3d2bd0a9c83fcfac1543ec39205d867170f2e47f19a7cfb2f4f079db6",
+          "size": 23712
         },
         {
           "path": "src/security/audit_trail.py",
@@ -5288,13 +5288,13 @@
         },
         {
           "path": "src/security/egress_registry.py",
-          "sha256": "fa3e2def616fc5b22cf877d419542c8d6a6adf37818b624b3e62456794bf9f04",
-          "size": 22328
+          "sha256": "b35dd750b9eaafa7ccf442c885465c176a1da2ee39a843917b1074408473e243",
+          "size": 23712
         },
         {
           "path": "src/security/encryption.py",
-          "sha256": "26b3b4941efb63087bb0eebfc2586de50c92e25aa03a30649d5fd15934a858c3",
-          "size": 52736
+          "sha256": "4055a5375c5f879e572b513d8143d6ffa7a9701ebba437c21ffd3b35e48ca000",
+          "size": 56442
         },
         {
           "path": "src/security/evidence/__init__.py",
@@ -5373,8 +5373,8 @@
         },
         {
           "path": "src/security/rbac.py",
-          "sha256": "f438c08d3079461dd430a412036fdc7f0a864c50e3479a8c36b3d79be39f3930",
-          "size": 24049
+          "sha256": "d0ad65b8cafa8fd0c3c9d4420494cc9b23abdf51906c873931f6c7f755572fd3",
+          "size": 32475
         },
         {
           "path": "src/security/rbac_store.py",
@@ -5388,8 +5388,8 @@
         },
         {
           "path": "src/security/secret_store.py",
-          "sha256": "8155dbbbd503376333a10ce6736608e39dc5c656d50c78247ff71f0e2a8b8dbd",
-          "size": 22660
+          "sha256": "9255bbbce2cf8e5dc48b0301d0230f660dedf5bd8cb2b71f088eca62bbbc47c5",
+          "size": 23278
         },
         {
           "path": "src/security/vault_crypto.py",
@@ -5487,9 +5487,14 @@
           "size": 748
         },
         {
+          "path": "src/tasks/_queue_paths.py",
+          "sha256": "db27fe0135a3974bf20e97de253ca83ec6913d8e82a0494e5dd3978c02a9c80a",
+          "size": 16783
+        },
+        {
           "path": "src/tasks/broker.py",
-          "sha256": "1ae45e4292c7f7fde6adb69407c545e29c8fa95a16c77c026c37db4298e49b23",
-          "size": 4313
+          "sha256": "2c12a24fd6112ae0a45ad418990e13f68ce8014948ebf2f3a8aba43dca43394c",
+          "size": 4171
         },
         {
           "path": "src/tasks/goal_notify.py",
@@ -5503,8 +5508,8 @@
         },
         {
           "path": "src/tasks/journal.py",
-          "sha256": "635c2b48af77230c0ea6bd4f92fae1b5fb110577ec47cb6ab5c4e18b27af2581",
-          "size": 2139
+          "sha256": "cbe4a990e3818e774b411dc050ba5efda9c91786afc410eb6b4c98e9788948d2",
+          "size": 2197
         },
         {
           "path": "src/tasks/local_handlers.py",
@@ -5513,8 +5518,8 @@
         },
         {
           "path": "src/tasks/local_scheduler.py",
-          "sha256": "841470bdf39a5107d11696bd0a96eabb62e40b58ab18926d211ee8515ae7b024",
-          "size": 42796
+          "sha256": "451b5c9c3a9643c397aec8adc05e17636d231b00c60634d895d6438d02fad6a5",
+          "size": 42955
         },
         {
           "path": "src/tasks/models.py",
@@ -5528,8 +5533,8 @@
         },
         {
           "path": "src/tasks/reminder_notify.py",
-          "sha256": "f21884a4195f7f6d3820f413167384e073487739f89ea45b4bdc9c35948986fb",
-          "size": 14349
+          "sha256": "c3a94e152fed2a336d7900524d4aab18e8b986508a9c7fc97909140e78243f61",
+          "size": 14235
         },
         {
           "path": "src/tasks/reminder_time.py",
@@ -5543,13 +5548,13 @@
         },
         {
           "path": "src/tasks/reminders.py",
-          "sha256": "d9eea8c09faba0dcbf57a24a61eb4fcdcb840f6cc49306c0007600d09476f39a",
-          "size": 89491
+          "sha256": "37a5180720e6f986061414b0b4b559a320ed4b86d0953d8b8c06e7e3bee41181",
+          "size": 89466
         },
         {
           "path": "src/tasks/reminders_cli.py",
-          "sha256": "3a17c8100df0720c78e5f0a3c17cc9650603dbc380508b27f4e9c78a84e41ac7",
-          "size": 17911
+          "sha256": "1d93eaf57b823c6061655f7b836282126f8bdc7dbcd4a4e08e9486336618176b",
+          "size": 17831
         },
         {
           "path": "src/tasks/scheduler_host.py",
@@ -5573,8 +5578,8 @@
         },
         {
           "path": "src/upgrade/api.py",
-          "sha256": "987df8e2604bfd7811af8be7b7c0ff1d6aae16aadd02886bc6f566d6e8361bd4",
-          "size": 19544
+          "sha256": "558b85dfbf39b899a015d299f751e763669fca94e1de1efbc139204934be3981",
+          "size": 24051
         },
         {
           "path": "src/upgrade/archive.py",
@@ -5733,11 +5738,11 @@
         }
       ],
       "data_schema_version": 2,
-      "signature": "wycK3e8K/p62E58kOgkqO51AeWrOEbhXOaewaFh5+S7OkXvn44lR/bbGi5I+GUrZtkdhYCs5TOms8poy0b5JDw==",
+      "signature": "VLp4qKXNh/9UbjcDcDnimmZtUM/4DR9ZusZnA0YB0PqhPYWZDiBfJttjyl3HICyADxONQnD5uI1rkkNfK+nHAA==",
       "signature_algorithm": "ed25519"
     }
   ],
-  "sequence": 1,
+  "sequence": 2,
   "manifest_signature_algorithm": "ed25519",
-  "manifest_signature": "p4tOD/kupYfP8fq5cfVujFSsUuQHPiXhmw6MbjsF6y5dNzjY48Bkvo4OVjsrq3kDPMsjvLa58JqBIoFhkdMWAg=="
+  "manifest_signature": "alANNZTKBI5iUr1tV7dwVIAotiRRCxrG4jepUtmYXmeYniIgWUviAE5UDAdsVqsT34Qg0vTXL4nzl3ZomYVPCA=="
 }
