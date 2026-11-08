@@ -326,7 +326,7 @@
   <main>
     <div class="beta reveal" role="note" aria-label="内测状态提示">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 2 2 20h20L12 2Z"/><path d="M12 8v6"/><path d="M12 17h.01"/></svg>
-      <p><span class="tag">内测版</span><b>安装链路冒烟已全部 PASS（health、控制台、登录、看板、聊天），安装包签名状态 Valid。</b>尚未完成：真实模型生成与流式、工具调用的安装级 E2E 正在重跑；当前安装包尚未内置升级公钥与清单地址，「检查更新」会提示未配置更新源。这两项完成前，本安装包按内测版提供，仅供试用，不代表正式发布版。</p>
+      <p><span class="tag">内测版</span><b>安装链路冒烟已全部 PASS（health、控制台、登录、看板、聊天）；真 Key 的 S-06 / S-07 / S-08 已通过，未重启即可用；安装包签名状态 Valid。</b>升级信任链已就位，清单验签通过、能拒篡改，但升级发布物由升级线统一上传。本安装包仍为内测版，仅供试用，不代表正式发布版。</p>
     </div>
 
     <section class="hero">
@@ -343,7 +343,7 @@
           <ul class="facts">
             <li><span class="k">版本</span><span class="v">0.1.1</span></li>
             <li><span class="k">发布日期</span><span class="v">2026-11-08</span></li>
-            <li><span class="k">体积</span><span class="v">28.18 MB</span></li>
+            <li><span class="k">体积</span><span class="v">28.20 MB</span></li>
             <li><span class="k">平台</span><span class="v">Windows 10 / 11 · x64</span></li>
           </ul>
         </div>
@@ -359,7 +359,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m5 10 7 7 7-7"/><path d="M4 21h16"/></svg>
           <span>下载 Windows 安装包</span>
         </a>
-        <p class="dl-note">Windows 10 / 11 · 64 位 · 28.18 MB（29,549,736 字节）</p>
+        <p class="dl-note">Windows 10 / 11 · 64 位 · 28.20 MB（29,567,136 字节）</p>
 
         <div class="filemeta">
           <span class="fname">LiuHao-Setup-0.1.1.exe</span>
@@ -368,9 +368,9 @@
         <div class="sha">
           <div class="lbl">
             <span>SHA256</span>
-            <button class="copy" type="button" data-copy="5BE14CCF99B3676A5E67B8FBEECB1A12E7908066EBDEFB6B7DBB8CD7E96756C7">复制</button>
+            <button class="copy" type="button" data-copy="49BC50C8C7768F9678A2610E415308CEA8E1E0B9D532AE7AAE7C135BB648B4DF">复制</button>
           </div>
-          <p class="hash">5BE14CCF99B3676A5E67B8FBEECB1A12E7908066EBDEFB6B7DBB8CD7E96756C7</p>
+          <p class="hash">49BC50C8C7768F9678A2610E415308CEA8E1E0B9D532AE7AAE7C135BB648B4DF</p>
         </div>
 
         <p class="warn"><strong>代码签名：项目自签名证书</strong>（CN=鎏灏智能中枢, O=LiuHao AI OS, C=CN；指纹以 AE398F09 开头）<br>
@@ -474,11 +474,11 @@
         </details>
 
         <details class="reveal d2">
-          <summary><span class="pm" aria-hidden="true"></span>装完点「检查更新」提示未配置更新源，是坏了吗？</summary>
+          <summary><span class="pm" aria-hidden="true"></span>升级链路现在是什么状态？</summary>
           <div class="body">
-            <p><strong>不是。</strong>本安装包签名有效、安装链路冒烟全绿，但这一版安装包尚未内置升级公钥与清单地址，所以「检查更新」会如实提示<strong>未配置更新源</strong>，这是当前预期状态，不代表升级功能损坏。</p>
-            <p>升级清单与升级包已经签发并托管在本站 <code class="inline-mono">updates/</code> 目录，但要等注入了公钥与清单地址的下一个安装包发布后才会生效。在这之前，请直接用本页下载的安装包覆盖安装来升级。</p>
-            <p><strong>不要手工改 <code class="inline-mono">updates/LIUHAO_RELEASE.json</code>：</strong>它已被签名，改动任意一个字节都会验签失败。等新包发布后，本页会更新这一条，如实写明自动升级的可用状态与校验方式。</p>
+            <p><strong>信任链已就位。</strong>升级清单采用签名发布，验签通过；清单内容被篡改、或与升级包不匹配时会被拒绝，不会静默生效。</p>
+            <p>升级清单与升级包托管在本站 <code class="inline-mono">updates/</code> 目录，由升级线统一上传与签发。页面只说明链路状态，不承诺自动升级的开放时间；需要升级时，直接用本页的安装包覆盖安装即可。</p>
+            <p><strong>不要手工改 <code class="inline-mono">updates/LIUHAO_RELEASE.json</code>：</strong>它已被签名，改动任意一个字节都会验签失败。</p>
           </div>
         </details>
 
