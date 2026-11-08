@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LiuHao AI OS · 鎏灏智能中枢 — Windows 安装包下载</title>
+<meta name="description" content="LiuHao AI OS · 鎏灏智能中枢 0.1.1 Windows 安装包下载：文件大小、SHA256 校验值、三步安装说明、系统要求与常见问题。">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0a09'/%3E%3Ccircle cx='32' cy='32' r='21' fill='none' stroke='%23d9b768' stroke-width='2'/%3E%3Ctext x='32' y='40' font-size='22' font-family='Georgia,serif' fill='%23d9b768' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#0a0a09;
+    --ink-2:#111110;
+    --paper:#f4efe4;
+    --muted:#a49c8d;
+    --dim:#7a7366;
+    --gold:#d9b768;
+    --gold-deep:#a8833c;
+    --line:rgba(244,239,228,.12);
+    --line-strong:rgba(244,239,228,.24);
+    --serif:"Noto Serif SC","Source Han Serif SC","Songti SC",STSong,"SimSun",Georgia,serif;
+    --sans:"PingFang SC","HarmonyOS Sans SC","Microsoft YaHei",-apple-system,"Segoe UI",sans-serif;
+    --mono:"Cascadia Code","JetBrains Mono",Consolas,"Courier New",monospace;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.75;
+    letter-spacing:.01em;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    background:
+      radial-gradient(1100px 620px at 78% -8%, rgba(217,183,104,.13), transparent 62%),
+      radial-gradient(900px 520px at 6% 8%, rgba(160,140,90,.07), transparent 66%),
+      repeating-linear-gradient(0deg, rgba(244,239,228,.022) 0 1px, transparent 1px 4px);
+  }
+  body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    background:radial-gradient(120% 90% at 50% 40%, transparent 42%, rgba(0,0,0,.62) 100%);
+  }
+  .wrap{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:0 28px 72px}
+  a{color:var(--paper);text-decoration:none}
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+
+  /* ── top bar ── */
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:22px 0 20px;border-bottom:1px solid var(--line);
+  }
+  .lockup{display:flex;align-items:center;gap:12px;font-size:15px;letter-spacing:.04em}
+  .lockup .mark{
+    width:30px;height:30px;flex:0 0 auto;border-radius:50%;
+    border:1px solid rgba(217,183,104,.55);
+    display:grid;place-items:center;
+    font-family:var(--serif);font-size:15px;color:var(--gold);
+    background:radial-gradient(circle at 50% 30%, rgba(217,183,104,.16), transparent 70%);
+  }
+  .lockup b{font-weight:600}
+  .top-meta{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--muted);white-space:nowrap}
+  .chip{
+    font-family:var(--mono);font-size:12px;letter-spacing:.06em;
+    border:1px solid var(--line-strong);border-radius:999px;padding:3px 11px;color:var(--paper);
+  }
+
+  /* ── hero ── */
+  .hero{
+    display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);
+    gap:44px;align-items:start;padding:64px 0 56px;
+  }
+  .eyebrow{
+    display:flex;align-items:center;gap:10px;margin:0 0 20px;
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);
+  }
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold);opacity:.7}
+  h1{
+    margin:0 0 18px;
+    font-family:var(--serif);font-weight:600;
+    font-size:clamp(30px,4.3vw,52px);line-height:1.22;letter-spacing:.01em;
+    background:linear-gradient(96deg,#fbf7ec 8%,#e6d5a8 58%,var(--gold-deep) 118%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    text-wrap:balance;
+  }
+  .category{
+    margin:0 0 22px;font-size:14.5px;line-height:1.7;color:var(--muted);
+    max-width:38em;
+  }
+  .category strong{color:var(--paper);font-weight:600}
+  .lede{
+    margin:0;max-width:34em;font-size:15.5px;color:#cfc8b9;
+    border-left:1px solid rgba(217,183,104,.45);padding-left:16px;line-height:1.85;
+  }
+  .facts{
+    display:flex;flex-wrap:wrap;gap:0;
+    margin:34px 0 0;padding:0;list-style:none;
+    border-top:1px solid var(--line);
+  }
+  .facts li{
+    padding:16px 22px 0 0;margin:0 22px 16px 0;border-right:1px solid var(--line);
+  }
+  .facts li:last-child{border-right:0;margin-right:0;padding-right:0}
+  .facts .k{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
+  .facts .v{font-size:14px;color:var(--paper);font-variant-numeric:tabular-nums}
+
+  /* ── download card ── */
+  .dl{
+    position:relative;
+    border:1px solid var(--line-strong);
+    border-radius:18px;
+    padding:26px 24px 22px;
+    background:
+      linear-gradient(172deg,rgba(244,239,228,.075),rgba(244,239,228,.022) 46%,rgba(244,239,228,.05));
+    box-shadow:0 34px 80px -36px rgba(0,0,0,.85), inset 0 1px 0 rgba(255,255,255,.06);
+  }
+  .dl::before{
+    content:"";position:absolute;inset:0;border-radius:18px;pointer-events:none;
+    background:radial-gradient(120% 70% at 82% 0%,rgba(217,183,104,.18),transparent 62%);
+    opacity:.9;
+  }
+  .dl > *{position:relative}
+  .dl-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px}
+  .dl-head h2{margin:0;font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:.02em}
+  .dl-head .ver{font-family:var(--mono);font-size:12px;color:var(--gold);letter-spacing:.08em}
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    width:100%;min-height:56px;padding:0 20px;border-radius:12px;
+    background:linear-gradient(180deg,#efd795,#d2a94f 58%,#bd9440);
+    color:#17130a;font-family:var(--sans);font-size:16px;font-weight:600;letter-spacing:.02em;
+    border:1px solid rgba(255,255,255,.22);
+    box-shadow:0 14px 30px -14px rgba(217,183,104,.55), inset 0 1px 0 rgba(255,255,255,.5);
+    transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
+    cursor:pointer;text-align:center;line-height:1.35;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 20px 38px -16px rgba(217,183,104,.62), inset 0 1px 0 rgba(255,255,255,.55);filter:brightness(1.03)}
+  .btn:active{transform:translateY(0);filter:brightness(.96)}
+  .btn svg{width:18px;height:18px;flex:0 0 auto}
+  .dl-note{margin:12px 0 0;font-size:12.5px;color:var(--muted);text-align:center;font-variant-numeric:tabular-nums}
+  .filemeta{
+    margin:18px 0 0;padding:14px 0 0;border-top:1px dashed var(--line);
+    font-size:12.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;
+  }
+  .filemeta .fname{font-family:var(--mono);font-size:12px;color:#cfc8b9;word-break:break-all}
+  .sha{margin:14px 0 0}
+  .sha .lbl{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;
+  }
+  .copy{
+    appearance:none;border:1px solid var(--line-strong);background:transparent;color:var(--muted);
+    font-size:11px;letter-spacing:.08em;padding:3px 9px;border-radius:6px;cursor:pointer;
+    transition:color .15s ease,border-color .15s ease,background .15s ease;
+  }
+  .copy:hover{color:var(--paper);border-color:var(--gold);background:rgba(217,183,104,.08)}
+  .copy.done{color:var(--gold);border-color:var(--gold)}
+  .hash{
+    margin:0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;
+    background:rgba(0,0,0,.35);
+    font-family:var(--mono);font-size:11.5px;line-height:1.65;letter-spacing:.03em;color:#ddd5c2;
+    word-break:break-all;overflow-wrap:anywhere;
+  }
+  .warn{
+    margin:16px 0 0;font-size:12.5px;color:#d8c9a2;line-height:1.7;
+    border-left:2px solid rgba(217,183,104,.55);padding-left:11px;
+  }
+  .altlink{display:block;margin-top:14px;font-size:12.5px;color:var(--muted);text-align:center}
+  .altlink a{border-bottom:1px solid rgba(244,239,228,.28)}
+  .altlink a:hover{color:var(--gold);border-color:var(--gold)}
+
+  /* ── section scaffolding ── */
+  section.block{padding:56px 0 8px;border-top:1px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin:0 0 30px}
+  .sec-head .idx{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--gold)}
+  .sec-head h2{margin:0;font-family:var(--serif);font-weight:600;font-size:clamp(22px,2.6vw,28px);letter-spacing:.015em}
+  .sec-head .aside{margin-left:auto;font-size:12.5px;color:var(--dim);text-align:right}
+
+  /* ── steps ── */
+  .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:0;padding:0;list-style:none}
+  .step{
+    border:1px solid var(--line);border-radius:14px;padding:24px 22px 22px;
+    background:linear-gradient(180deg,rgba(244,239,228,.045),rgba(244,239,228,.012));
+  }
+  .step .n{
+    font-family:var(--serif);font-size:26px;line-height:1;color:var(--gold);
+    display:block;margin-bottom:14px;letter-spacing:.04em;
+  }
+  .step h3{margin:0 0 8px;font-size:15.5px;font-weight:600;letter-spacing:.02em}
+  .step p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.8}
+  .step code, .inline-mono{font-family:var(--mono);font-size:12px;color:#e2d8c2;background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:5px;padding:1px 6px;word-break:break-word}
+
+  /* ── requirements ── */
+  .req{
+    display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 40px;
+    margin:0;padding:0;
+  }
+  .req .row{display:grid;grid-template-columns:118px minmax(0,1fr);gap:18px;padding:15px 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .req dt{font-size:12px;letter-spacing:.1em;color:var(--dim);text-transform:uppercase}
+  .req dd{margin:0;font-size:14px;color:#d5cebf;line-height:1.8}
+  .req dd b{font-weight:600;color:var(--paper)}
+  .req a{color:var(--gold);border-bottom:1px solid rgba(217,183,104,.35);word-break:break-word}
+  .req a:hover{border-color:var(--gold)}
+
+  /* ── faq ── */
+  .faq{display:grid;gap:12px}
+  .faq details{
+    border:1px solid var(--line);border-radius:13px;background:rgba(244,239,228,.028);
+    transition:border-color .18s ease,background .18s ease;
+  }
+  .faq details[open]{border-color:rgba(217,183,104,.36);background:rgba(244,239,228,.05)}
+  .faq summary{
+    list-style:none;cursor:pointer;display:flex;align-items:flex-start;gap:14px;
+    padding:19px 22px;font-size:15px;font-weight:600;letter-spacing:.01em;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary .pm{
+    flex:0 0 auto;width:18px;height:18px;margin-top:3px;position:relative;border-radius:50%;
+    border:1px solid rgba(217,183,104,.5);
+  }
+  .faq summary .pm::before,.faq summary .pm::after{
+    content:"";position:absolute;left:50%;top:50%;width:8px;height:1px;background:var(--gold);
+    transform:translate(-50%,-50%);
+  }
+  .faq summary .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .2s ease}
+  .faq details[open] summary .pm::after{transform:translate(-50%,-50%) rotate(0deg)}
+  .faq .body{padding:0 22px 22px 54px;font-size:14px;color:#c6bfb0;line-height:1.9}
+  .faq .body p{margin:0 0 10px}
+  .faq .body p:last-child{margin-bottom:0}
+  .faq .body ol,.faq .body ul{margin:8px 0 10px;padding-left:20px}
+  .faq .body li{margin:5px 0}
+  .faq .body strong{color:var(--paper);font-weight:600}
+
+  /* ── footer ── */
+  footer{
+    margin-top:64px;padding-top:26px;border-top:1px solid var(--line);
+    display:flex;flex-wrap:wrap;gap:14px 28px;align-items:baseline;justify-content:space-between;
+    font-size:12.5px;color:var(--dim);
+  }
+  footer .fl{display:flex;align-items:center;gap:10px;color:var(--muted)}
+  footer .fl .mark{width:22px;height:22px;font-size:12px}
+  footer b{color:var(--muted);font-weight:500}
+
+  /* ── reveal ── */
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .reveal{animation:rise .62s cubic-bezier(.2,.7,.25,1) both}
+  .d1{animation-delay:.06s}.d2{animation-delay:.14s}.d3{animation-delay:.22s}.d4{animation-delay:.3s}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{animation:none}
+    *{transition:none!important}
+  }
+
+  /* ── responsive ── */
+  @media (max-width:900px){
+    .hero{grid-template-columns:minmax(0,1fr);gap:34px;padding:48px 0 44px}
+    .dl{max-width:560px}
+    .steps{grid-template-columns:minmax(0,1fr)}
+    .req{grid-template-columns:minmax(0,1fr);gap:0}
+    .req .row:last-child{border-bottom:1px solid var(--line)}
+    .sec-head .aside{display:none}
+  }
+  @media (max-width:560px){
+    body{font-size:15px}
+    .wrap{padding:0 18px 56px}
+    .topbar{padding:16px 0 14px}
+    .top-meta .hide-sm{display:none}
+    .hero{padding:38px 0 36px}
+    h1{font-size:clamp(26px,8.2vw,34px);line-height:1.28}
+    .facts{margin-top:26px}
+    .facts li{padding:12px 16px 0 0;margin:0 16px 12px 0}
+    .facts .v{font-size:13px}
+    .dl{padding:20px 17px 18px;border-radius:15px}
+    .btn{font-size:15px;min-height:52px}
+    .hash{font-size:10.5px;padding:10px 11px}
+    section.block{padding:42px 0 6px}
+    .sec-head{margin-bottom:22px}
+    .req .row{grid-template-columns:96px minmax(0,1fr);gap:12px}
+    .faq summary{padding:16px 15px;font-size:14.5px}
+    .faq .body{padding:0 15px 18px 46px;font-size:13.5px}
+    footer{margin-top:44px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="topbar reveal">
+    <div class="lockup">
+      <span class="mark" aria-hidden="true">L</span>
+      <b>LiuHao AI OS · 鎏灏智能中枢</b>
+    </div>
+    <div class="top-meta">
+      <span class="hide-sm">Windows 桌面端</span>
+      <span class="chip">v0.1.1</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="reveal d1">
+        <p class="eyebrow">Windows Desktop Release</p>
+        <h1>LiuHao AI OS · 鎏灏智能中枢</h1>
+        <p class="category"><strong>Human-Sovereign Agent Operating System（人类主权自主智能体 OS）</strong><br>桌面原生应用：程序与数据默认分离，数据存在本机；默认不主动联网，不收集使用统计。</p>
+        <p class="lede">装在自己的电脑上，账号和 API Key 都在本机生成、加密保存；模型可以选本机 Ollama，也可以接 OpenAI 兼容的云端服务。</p>
+
+        <ul class="facts">
+          <li><span class="k">版本</span><span class="v">0.1.1</span></li>
+          <li><span class="k">发布日期</span><span class="v">2026-11-08</span></li>
+          <li><span class="k">体积</span><span class="v">27.53 MB</span></li>
+          <li><span class="k">平台</span><span class="v">Windows 10 / 11 · x64</span></li>
+        </ul>
+      </div>
+
+      <aside class="dl reveal d2" aria-label="下载安装包">
+        <div class="dl-head">
+          <h2>下载安装包</h2>
+          <span class="ver">0.1.1</span>
+        </div>
+        <a class="btn" id="downloadBtn"
+           href="https://github.com/yhd952700-prog/liuhao-release/releases/download/v0.1.1/LiuHao-Setup-0.1.1.exe"
+           rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m5 10 7 7 7-7"/><path d="M4 21h16"/></svg>
+          <span>下载 Windows 安装包</span>
+        </a>
+        <p class="dl-note">Windows 10 / 11 · 64 位 · 27.53 MB（28,866,678 字节）</p>
+
+        <div class="filemeta">
+          <span class="fname">LiuHao-Setup-0.1.1.exe</span>
+        </div>
+
+        <div class="sha">
+          <div class="lbl">
+            <span>SHA256</span>
+            <button class="copy" type="button" data-copy="13A222F758E788FA863B586857D39A6901F821D832C84997554F4B0C64F8182E">复制</button>
+          </div>
+          <p class="hash">13A222F758E788FA863B586857D39A6901F821D832C84997554F4B0C64F8182E</p>
+        </div>
+
+        <p class="warn">安装包未做代码签名，首次运行 Windows 会弹 SmartScreen 提示，这是预期行为；下载后请先核对上面的 SHA256。</p>
+        <a class="altlink" href="https://github.com/yhd952700-prog/liuhao-release/releases" rel="noopener">查看全部版本与升级包 →</a>
+      </aside>
+    </section>
+
+    <section class="block" id="steps">
+      <div class="sec-head reveal">
+        <span class="idx">01</span>
+        <h2>三步装好，第一次就能用</h2>
+      </div>
+      <ol class="steps">
+        <li class="step reveal d1">
+          <span class="n">01</span>
+          <h3>下载安装包</h3>
+          <p>点上面的按钮，得到 <code>LiuHao-Setup-0.1.1.exe</code>。下载后建议用 SHA256 核对文件是否完整，特别是从聊天工具或网盘转存来的。</p>
+        </li>
+        <li class="step reveal d2">
+          <span class="n">02</span>
+          <h3>安装到 D 盘</h3>
+          <p>双击安装，默认程序装到 <code>D:\LiuHao</code>，数据在 <code>D:\LiuHaoData</code>，不占 C 盘。默认不需要管理员权限；D 盘不可用时会自动回退到当前用户目录，安装不会中断。</p>
+        </li>
+        <li class="step reveal d3">
+          <span class="n">03</span>
+          <h3>建账号、填 Key</h3>
+          <p>首次启动会打开设置向导：建管理员账号和登录密码，然后选本机 Ollama、OpenAI 兼容云，或先跳过。没有 Key 也能装好，之后在「系统设置 → 模型管理」补上即可。</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="block" id="requirements">
+      <div class="sec-head reveal">
+        <span class="idx">02</span>
+        <h2>系统要求</h2>
+        <span class="aside">安装约需 400 MB 可用空间<br>不含任何 AI 模型</span>
+      </div>
+      <dl class="req">
+        <div class="row reveal d1">
+          <dt>操作系统</dt>
+          <dd><b>Windows 10 22H2（内部版本 19045）及以上</b>，或 <b>Windows 11 24H2（内部版本 26100）及以上</b></dd>
+        </div>
+        <div class="row reveal d1">
+          <dt>架构</dt>
+          <dd><b>64 位 x64</b>；ARM64 设备通过系统自带的 x64 模拟运行</dd>
+        </div>
+        <div class="row reveal d2">
+          <dt>WebView2</dt>
+          <dd>桌面窗口依赖 <b>Microsoft Edge WebView2 Runtime</b>（Win11 一般已自带）。缺失时首次启动会给出提示，也可先到微软官方页面下载：<a href="https://developer.microsoft.com/microsoft-edge/webview2/" target="_blank" rel="noopener">developer.microsoft.com/microsoft-edge/webview2</a>，或直接下 <a href="https://go.microsoft.com/fwlink/p/?LinkId=2124703" target="_blank" rel="noopener">Evergreen 引导安装程序</a>。</dd>
+        </div>
+        <div class="row reveal d2">
+          <dt>磁盘</dt>
+          <dd>安装约需 <b>400 MB</b> 可用空间；本机 Ollama 模型另需约 2 GB（可选）</dd>
+        </div>
+        <div class="row reveal d3">
+          <dt>桌面形态</dt>
+          <dd>原生桌面窗口（pywebview + Edge WebView2），<b>不是把网页装进浏览器</b>；浏览器只在你打开本机控制台 <code class="inline-mono">http://127.0.0.1:8080</code> 时才用到。</dd>
+        </div>
+        <div class="row reveal d3">
+          <dt>权限</dt>
+          <dd>默认 <b>不需要管理员权限、不弹 UAC</b>；只有手动回退安装到 <code class="inline-mono">C:\Program Files</code> 时才会用到</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="block" id="faq">
+      <div class="sec-head reveal">
+        <span class="idx">03</span>
+        <h2>常见问题</h2>
+      </div>
+      <div class="faq">
+        <details class="reveal d1" open>
+          <summary><span class="pm" aria-hidden="true"></span>Windows 弹出「已保护你的电脑」，怎么继续？</summary>
+          <div class="body">
+            <p>这是 <strong>SmartScreen</strong> 在提示安装包没有代码签名，不是病毒告警。当前版本没有购买签名证书，属于已知事实。</p>
+            <ol>
+              <li>看到蓝色窗口「Windows 已保护你的电脑」时，点左侧的 <strong>「更多信息」</strong>；</li>
+              <li>窗口下方出现「应用：LiuHao-Setup-0.1.1.exe」和 <strong>「仍要运行」</strong>，点它；</li>
+              <li>进入安装向导后按提示操作；默认安装路径不需要管理员权限，不会弹 UAC。</li>
+            </ol>
+            <p>如果点「更多信息」后没有「仍要运行」，或提示「已被组织阻止」，说明文件可能被改动或来源不可信：请停止安装，重新从本页下载，并核对 SHA256。</p>
+          </div>
+        </details>
+
+        <details class="reveal d2">
+          <summary><span class="pm" aria-hidden="true"></span>装完打不开、或者打开没反应怎么办？</summary>
+          <div class="body">
+            <p>按顺序排查，多数情况是端口被占用或窗口只是隐藏了：</p>
+            <ul>
+              <li>先看任务栏右下角托盘：关掉状态窗口只是隐藏到托盘，网关仍在运行；双击桌面「LiuHao AI OS · 鎏灏智能中枢」快捷方式可重新打开窗口。</li>
+              <li>如果提示端口被占用，窗口会说明被谁占用：关掉占用程序再启动，或在首启向导 / 启动入口里换一个空闲端口。</li>
+              <li>需要看命令行输出：在程序目录运行 <code class="inline-mono">LiuHao.bat --console</code>，会打印启动过程与错误原因。</li>
+              <li>WebView2 缺失时程序会提示，可先装 WebView2，或用托盘菜单「在浏览器中打开」进入控制台。</li>
+              <li>仍然不行：开始菜单 →「LiuHao AI OS · 鎏灏智能中枢」→「收集诊断信息（离线）」，双击生成脱敏诊断包（服务未启动也能用），把它发给支持人员。</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="reveal d3">
+          <summary><span class="pm" aria-hidden="true"></span>我填的 API Key 存在哪里？会被上传吗？</summary>
+          <div class="body">
+            <p><strong>只存在本机。</strong>API Key 用 <strong>AES-256-GCM</strong> 加密后保存在你的数据目录（默认 <code class="inline-mono">D:\LiuHaoData\data</code>），不会上传到任何服务器，也不会以明文写进配置文件。</p>
+            <p>备份时把整个数据目录复制走即可，但必须同时复制 <code class="inline-mono">data\model_config.key</code> 与 <code class="inline-mono">data\model_registry.sqlite3</code>：少一个，已保存的 Key 就解不开。卸载时默认<strong>保留数据</strong>，只有连续两次确认才会删除。</p>
+            <p>对话、知识库、审计记录是本地明文 SQLite 文件，依靠 Windows 账号权限保护；多人共用或设备可能丢失时，建议开启 BitLocker。</p>
+          </div>
+        </details>
+
+        <details class="reveal d4">
+          <summary><span class="pm" aria-hidden="true"></span>下载下来的文件和页面上的 SHA256 不一致？</summary>
+          <div class="body">
+            <p>说明文件在传输或转存过程中被改动过，<strong>不要安装</strong>。请在 PowerShell 里重新计算并比对：</p>
+            <p><code class="inline-mono">Get-FileHash .\LiuHao-Setup-0.1.1.exe -Algorithm SHA256</code></p>
+            <p>一致才继续；不一致请删掉文件，重新从本页下载。</p>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="reveal">
+    <div class="fl">
+      <span class="mark" aria-hidden="true">L</span>
+      <span><b>LiuHao AI OS · 鎏灏智能中枢</b> · 0.1.1</span>
+    </div>
+    <div>只从本页给出的链接获取安装包；转存、转发来的文件请先核对 SHA256。</div>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy') || '';
+      var done = function () {
+        var old = btn.textContent;
+        btn.textContent = '已复制';
+        btn.classList.add('done');
+        setTimeout(function () { btn.textContent = old; btn.classList.remove('done'); }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function () { legacy(); });
+      } else {
+        legacy();
+      }
+      function legacy() {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+    });
+  });
+</script>
+</body>
+</html>
