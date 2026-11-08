@@ -217,6 +217,42 @@
   .step p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.8}
   .step code, .inline-mono{font-family:var(--mono);font-size:12px;color:#e2d8c2;background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:5px;padding:1px 6px;word-break:break-word}
 
+  /* ── first-run / verify ── */
+  .card{
+    border:1px solid var(--line);border-radius:14px;padding:24px 24px 22px;
+    background:linear-gradient(180deg,rgba(244,239,228,.045),rgba(244,239,228,.012));
+  }
+  .card > p{margin:0 0 14px;font-size:14px;color:#cfc8b9;line-height:1.85}
+  .card > p:last-child{margin-bottom:0}
+  .card strong{color:var(--paper);font-weight:600}
+  .guide-list{margin:0 0 16px;padding:0;list-style:none;counter-reset:g}
+  .guide-list li{
+    position:relative;padding:0 0 16px 34px;margin:0;
+    font-size:14px;color:#c6bfb0;line-height:1.85;
+  }
+  .guide-list li::before{
+    counter-increment:g;content:counter(g,decimal-leading-zero);
+    position:absolute;left:0;top:1px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--gold);
+  }
+  .guide-list li:not(:last-child)::after{content:"";position:absolute;left:9px;top:21px;bottom:8px;width:1px;background:var(--line)}
+  .guide-list b{display:block;color:var(--paper);font-weight:600;margin-bottom:3px;font-size:14.5px}
+  .guide-list p{margin:0}
+  .muted-note{margin:0;padding-top:14px;border-top:1px dashed var(--line);font-size:12.6px;color:var(--dim);line-height:1.8}
+  .cmd{
+    position:relative;margin:10px 0 16px;padding:14px 96px 14px 16px;
+    border:1px solid var(--line);border-radius:10px;background:rgba(0,0,0,.35);
+    font-family:var(--mono);font-size:12px;line-height:1.8;color:#ddd5c2;
+    word-break:break-all;overflow-wrap:anywhere;
+  }
+  .cmd .copy{position:absolute;right:10px;top:10px}
+  .verify-facts{
+    display:grid;grid-template-columns:104px minmax(0,1fr);gap:10px 16px;
+    margin:0;padding:14px 0 0;border-top:1px dashed var(--line);
+    font-size:12.8px;color:var(--muted);
+  }
+  .verify-facts dt{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);padding-top:2px}
+  .verify-facts dd{margin:0;font-family:var(--mono);font-size:11.8px;color:#ddd5c2;word-break:break-all;overflow-wrap:anywhere;line-height:1.75}
+
   /* ── requirements ── */
   .req{
     display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 40px;
@@ -303,6 +339,11 @@
     section.block{padding:42px 0 6px}
     .sec-head{margin-bottom:22px}
     .req .row{grid-template-columns:96px minmax(0,1fr);gap:12px}
+    .card{padding:18px 16px 16px}
+    .guide-list li{padding-left:28px}
+    .guide-list li::after{left:8px}
+    .cmd{padding:38px 14px 14px 15px}
+    .verify-facts{grid-template-columns:minmax(0,1fr);gap:6px}
     .faq summary{padding:16px 15px;font-size:14.5px}
     .faq .body{padding:0 15px 18px 46px;font-size:13.5px}
     footer{margin-top:44px}
@@ -404,9 +445,54 @@
       </ol>
     </section>
 
-    <section class="block" id="requirements">
+    <section class="block" id="first-run">
       <div class="sec-head reveal">
         <span class="idx">02</span>
+        <h2>第一次运行会看到「已保护你的电脑」</h2>
+        <span class="aside">自签名证书的预期提示</span>
+      </div>
+      <div class="card reveal d1">
+        <ol class="guide-list">
+          <li><b>你会看到什么</b>
+            <p>双击安装包后，Windows 可能弹出蓝色窗口「Windows 已保护你的电脑」，发布者显示「未知发布者」。从浏览器或聊天工具下载的文件，右键属性里还可能带「此文件来自其他计算机，可能被阻止」的标记。</p>
+          </li>
+          <li><b>为什么会有这个提示</b>
+            <p>安装包用的是项目自签名证书（<code class="inline-mono">CN=鎏灏智能中枢, O=LiuHao AI OS, C=CN</code>），不是公开商业 CA 签发的证书，也没有 SmartScreen 云端信誉记录，Windows 无法确认发布者身份，就按默认策略提示。这是证书类型带来的预期现象，<strong>不代表文件是病毒或盗版</strong>。运行随包的信任脚本只改变本机对这张证书的信任（属性里能看到真实签名者、<code class="inline-mono">Get-AuthenticodeSignature</code> 返回 <code class="inline-mono">Valid</code>），<strong>不会让 SmartScreen 提示消失</strong>。</p>
+          </li>
+          <li><b>怎么继续安装</b>
+            <p>① 在蓝色窗口点左侧的「更多信息」；② 窗口下方出现应用名与「仍要运行」，点「仍要运行」；③ 进入安装向导，按提示装到默认的 <code>D:\LiuHao</code>，默认不需要管理员权限、不弹 UAC。如果文件属性底部有「解除锁定」复选框，先勾选并应用，再双击安装包。</p>
+          </li>
+          <li><b>装完打开是什么</b>
+            <p>是<strong>桌面原生窗口</strong>（pywebview + Edge WebView2），不是把网页塞进浏览器，也不需要安装任何浏览器插件；浏览器只在你自己打开本机控制台 <code class="inline-mono">http://127.0.0.1:8080</code> 时才会用到。</p>
+          </li>
+        </ol>
+        <p class="muted-note">若点「更多信息」后没有「仍要运行」，或提示「已被组织阻止」，请停止安装，重新从本页下载，并按下一节的命令核对哈希。</p>
+      </div>
+    </section>
+
+    <section class="block" id="verify">
+      <div class="sec-head reveal">
+        <span class="idx">03</span>
+        <h2>自己核对安装包</h2>
+        <span class="aside">下载后、安装前各一次最稳</span>
+      </div>
+      <div class="card reveal d1">
+        <p>在 PowerShell 里运行下面这条命令，把路径换成你实际保存安装包的位置，然后把输出与本页的期望值逐字比对：</p>
+        <div class="cmd"><button class="copy" type="button" data-copy="Get-FileHash &quot;$env:USERPROFILE\Downloads\LiuHao-Setup-0.1.1.exe&quot; -Algorithm SHA256">复制命令</button>Get-FileHash "$env:USERPROFILE\Downloads\LiuHao-Setup-0.1.1.exe" -Algorithm SHA256</div>
+        <dl class="verify-facts">
+          <dt>期望 SHA256</dt>
+          <dd>49BC50C8C7768F9678A2610E415308CEA8E1E0B9D532AE7AAE7C135BB648B4DF <button class="copy" type="button" data-copy="49BC50C8C7768F9678A2610E415308CEA8E1E0B9D532AE7AAE7C135BB648B4DF">复制</button></dd>
+          <dt>期望字节数</dt>
+          <dd>29,567,136 字节（28.20 MB）</dd>
+        </dl>
+        <p>想看字节数，可以再跑一条 <code class="inline-mono">(Get-Item "保存路径\LiuHao-Setup-0.1.1.exe").Length</code>，应当输出 <code class="inline-mono">29567136</code>。</p>
+        <p>哈希与字节数都对得上，说明文件和本页发布的是同一份；不一致就<strong>不要安装</strong>，重新从本页下载——经网盘、聊天工具或第三方站点转存的文件可能被截断或替换。</p>
+      </div>
+    </section>
+
+    <section class="block" id="requirements">
+      <div class="sec-head reveal">
+        <span class="idx">04</span>
         <h2>系统要求</h2>
         <span class="aside">安装约需 400 MB 可用空间<br>不含任何 AI 模型</span>
       </div>
@@ -440,7 +526,7 @@
 
     <section class="block" id="faq">
       <div class="sec-head reveal">
-        <span class="idx">03</span>
+        <span class="idx">05</span>
         <h2>常见问题</h2>
       </div>
       <div class="faq">
