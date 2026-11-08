@@ -184,6 +184,22 @@
   .altlink a{border-bottom:1px solid rgba(244,239,228,.28)}
   .altlink a:hover{color:var(--gold);border-color:var(--gold)}
 
+  /* ── beta banner ── */
+  .beta{
+    display:flex;align-items:flex-start;gap:13px;
+    margin:18px 0 0;padding:14px 18px;
+    border:1px solid rgba(224,132,82,.42);border-radius:11px;
+    background:linear-gradient(92deg,rgba(224,132,82,.15),rgba(224,132,82,.045) 70%,rgba(224,132,82,.02));
+  }
+  .beta svg{width:17px;height:17px;flex:0 0 auto;margin-top:3px;color:#e89b62}
+  .beta p{margin:0;font-size:13.5px;line-height:1.75;color:#ecd6c2}
+  .beta b{color:#ffcf9f;font-weight:600}
+  .beta .tag{
+    display:inline-block;margin-right:8px;padding:1px 7px;border-radius:4px;
+    background:rgba(224,132,82,.2);border:1px solid rgba(224,132,82,.5);
+    font-size:11px;letter-spacing:.08em;color:#ffcfa6;vertical-align:1px;
+  }
+
   /* ── section scaffolding ── */
   section.block{padding:56px 0 8px;border-top:1px solid var(--line)}
   .sec-head{display:flex;align-items:baseline;gap:14px;margin:0 0 30px}
@@ -312,6 +328,11 @@
   </header>
 
   <main>
+    <div class="beta reveal" role="note" aria-label="内测状态提示">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 2 2 20h20L12 2Z"/><path d="M12 8v6"/><path d="M12 17h.01"/></svg>
+      <p><span class="tag">内测版</span><b>当前安装包尚未通过发布冒烟：登录冒烟记录为 FAIL（HTTP 403），尚未转正，仅供试用，不代表正式发布版。</b>等新安装包冒烟真正通过后，本页会改成正式版，并写明通过依据（冒烟报告与校验值）。</p>
+    </div>
+
     <section class="hero">
       <div class="reveal d1">
         <p class="eyebrow">Windows Desktop Release</p>
@@ -326,7 +347,7 @@
           <ul class="facts">
             <li><span class="k">版本</span><span class="v">0.1.1</span></li>
             <li><span class="k">发布日期</span><span class="v">2026-11-08</span></li>
-            <li><span class="k">体积</span><span class="v">27.53 MB</span></li>
+            <li><span class="k">体积</span><span class="v">28.18 MB</span></li>
             <li><span class="k">平台</span><span class="v">Windows 10 / 11 · x64</span></li>
           </ul>
         </div>
@@ -334,15 +355,15 @@
         <aside class="dl reveal d3" aria-label="下载安装包">
         <div class="dl-head">
           <h2>下载安装包</h2>
-          <span class="ver">0.1.1</span>
+          <span class="ver">0.1.1 · 内测</span>
         </div>
         <a class="btn" id="downloadBtn"
-           href="https://github.com/yhd952700-prog/liuhao-release/releases/download/v0.1.1/LiuHao-Setup-0.1.1.exe"
+           href="LiuHao-Setup-0.1.1.exe"
            rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m5 10 7 7 7-7"/><path d="M4 21h16"/></svg>
           <span>下载 Windows 安装包</span>
         </a>
-        <p class="dl-note">Windows 10 / 11 · 64 位 · 27.53 MB（28,866,678 字节）</p>
+        <p class="dl-note">Windows 10 / 11 · 64 位 · 28.18 MB（29,543,416 字节）</p>
 
         <div class="filemeta">
           <span class="fname">LiuHao-Setup-0.1.1.exe</span>
@@ -351,12 +372,14 @@
         <div class="sha">
           <div class="lbl">
             <span>SHA256</span>
-            <button class="copy" type="button" data-copy="13A222F758E788FA863B586857D39A6901F821D832C84997554F4B0C64F8182E">复制</button>
+            <button class="copy" type="button" data-copy="F7673E9794EB0E8D3FFED0C21630C43E6B00A0E95397D648F0D58383F81048E3">复制</button>
           </div>
-          <p class="hash">13A222F758E788FA863B586857D39A6901F821D832C84997554F4B0C64F8182E</p>
+          <p class="hash">F7673E9794EB0E8D3FFED0C21630C43E6B00A0E95397D648F0D58383F81048E3</p>
         </div>
 
-        <p class="warn">安装包未做代码签名，首次运行 Windows 会弹 SmartScreen 提示，这是预期行为；下载后请先核对上面的 SHA256。</p>
+        <p class="warn"><strong>代码签名：项目自签名证书</strong><br>
+        安装包已用本项目自签名证书签名，签名者主体为「鎏灏智能中枢」。右键安装包 → 属性 →「数字签名」可以看到真实签名者。<strong>它不是公开权威 CA 证书</strong>：未导入信任的机器仍会看到「未知发布者 / Windows 已保护你的电脑」，这是自签名证书的正常现象。<br>
+        随包提供 <a href="信任签名证书.cmd" download>信任签名证书.cmd</a> 与 <a href="LiuHao-CodeSigning.cer" download>公钥证书</a>：双击即可信任当前 Windows 用户（不需要管理员权限）；导入后可用 <code>Get-AuthenticodeSignature</code> 复查。即使已信任，SmartScreen 仍可能因文件信誉不足给出提示 —— 自签名证书没有公开 CA 的信誉积累。</p>
         <a class="altlink" href="https://github.com/yhd952700-prog/liuhao-release/releases" rel="noopener">查看全部版本 →</a>
         </aside>
       </div>
@@ -429,13 +452,27 @@
         <details class="reveal d1" open>
           <summary><span class="pm" aria-hidden="true"></span>Windows 弹出「已保护你的电脑」，怎么继续？</summary>
           <div class="body">
-            <p>这是 <strong>SmartScreen</strong> 在提示安装包没有代码签名，不是病毒告警。当前版本没有购买签名证书，属于已知事实。</p>
+            <p>这是 <strong>SmartScreen</strong> 在提示安装包没有获得公信力签名或信誉，不是病毒告警。安装包使用项目自签名证书：未导入信任前，Windows 会把它当作「未知发布者」，这属于自签名证书的正常现象。</p>
             <ol>
               <li>看到蓝色窗口「Windows 已保护你的电脑」时，点左侧的 <strong>「更多信息」</strong>；</li>
               <li>窗口下方出现「应用：LiuHao-Setup-0.1.1.exe」和 <strong>「仍要运行」</strong>，点它；</li>
               <li>进入安装向导后按提示操作；默认安装路径不需要管理员权限，不会弹 UAC。</li>
             </ol>
+            <p>想消除「未知发布者」：先运行随包提供的 <a href="信任签名证书.cmd" download><code>信任签名证书.cmd</code></a>（双击即可，只影响当前用户），再右键安装包 → 属性 →「数字签名」，即可确认签名者为「鎏灏智能中枢」。公钥证书见 <a href="LiuHao-CodeSigning.cer" download>LiuHao-CodeSigning.cer</a>。导入信任后仍可能因文件信誉不足出现 SmartScreen 提示，这不代表信任脚本没装好。</p>
             <p>如果点「更多信息」后没有「仍要运行」，或提示「已被组织阻止」，说明文件可能被改动或来源不可信：请停止安装，重新从本页下载，并核对 SHA256。</p>
+          </div>
+        </details>
+
+        <details class="reveal d2">
+          <summary><span class="pm" aria-hidden="true"></span>怎么验证安装包签名？</summary>
+          <div class="body">
+            <p>两种方式，任选一种：</p>
+            <ul>
+              <li><strong>图形界面</strong>：右键 <code>LiuHao-Setup-0.1.1.exe</code> → 属性 →「数字签名」→ 选中签名条目 →「详细信息」，签名者应显示「鎏灏智能中枢」。</li>
+              <li><strong>命令行</strong>：在 PowerShell 里运行
+                <code class="inline-mono">Get-AuthenticodeSignature "D:\LiuHao-Setup-0.1.1.exe" | Format-List Status, SignerCertificate</code>。</li>
+            </ul>
+            <p>未导入信任时，<code>Status</code> 可能是 <code>UnknownError</code>（证书链终止于不受信任的根证书）；运行随包的 <code>信任签名证书.cmd</code> 后应变为 <code>Valid</code>。签名有效不等于文件来源可信，下载后仍请核对本页的 SHA256。</p>
           </div>
         </details>
 
