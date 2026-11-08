@@ -80,9 +80,10 @@
   }
 
   /* ── hero ── */
-  .hero{
+  .hero{padding:58px 0 54px}
+  .hero-grid{
     display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);
-    gap:44px;align-items:start;padding:64px 0 56px;
+    gap:44px;align-items:start;margin-top:34px;
   }
   .eyebrow{
     display:flex;align-items:center;gap:10px;margin:0 0 20px;
@@ -90,13 +91,14 @@
   }
   .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold);opacity:.7}
   h1{
-    margin:0 0 18px;
-    font-family:var(--serif);font-weight:600;
-    font-size:clamp(30px,4.3vw,52px);line-height:1.22;letter-spacing:.01em;
-    background:linear-gradient(96deg,#fbf7ec 8%,#e6d5a8 58%,var(--gold-deep) 118%);
+    margin:0;
+    font-family:var(--serif);font-weight:700;
+    font-size:clamp(29px,4.3vw,54px);line-height:1.24;letter-spacing:.01em;
+    background:linear-gradient(96deg,#fdf9ee 6%,#ecd9ad 62%,#c39d55 118%);
     -webkit-background-clip:text;background-clip:text;color:transparent;
     text-wrap:balance;
   }
+  h1 .nw{white-space:nowrap}
   .category{
     margin:0 0 22px;font-size:14.5px;line-height:1.7;color:var(--muted);
     max-width:38em;
@@ -265,7 +267,7 @@
 
   /* ── responsive ── */
   @media (max-width:900px){
-    .hero{grid-template-columns:minmax(0,1fr);gap:34px;padding:48px 0 44px}
+    .hero-grid{grid-template-columns:minmax(0,1fr);gap:34px;margin-top:28px}
     .dl{max-width:560px}
     .steps{grid-template-columns:minmax(0,1fr)}
     .req{grid-template-columns:minmax(0,1fr);gap:0}
@@ -277,8 +279,9 @@
     .wrap{padding:0 18px 56px}
     .topbar{padding:16px 0 14px}
     .top-meta .hide-sm{display:none}
-    .hero{padding:38px 0 36px}
-    h1{font-size:clamp(26px,8.2vw,34px);line-height:1.28}
+    .hero{padding:34px 0 32px}
+    h1{font-size:clamp(25px,7.6vw,32px);line-height:1.32}
+    .hero-grid{margin-top:22px;gap:26px}
     .facts{margin-top:26px}
     .facts li{padding:12px 16px 0 0;margin:0 16px 12px 0}
     .facts .v{font-size:13px}
@@ -312,19 +315,23 @@
     <section class="hero">
       <div class="reveal d1">
         <p class="eyebrow">Windows Desktop Release</p>
-        <h1>LiuHao AI OS · 鎏灏智能中枢</h1>
-        <p class="category"><strong>Human-Sovereign Agent Operating System（人类主权自主智能体 OS）</strong><br>桌面原生应用：程序与数据默认分离，数据存在本机；默认不主动联网，不收集使用统计。</p>
-        <p class="lede">装在自己的电脑上，账号和 API Key 都在本机生成、加密保存；模型可以选本机 Ollama，也可以接 OpenAI 兼容的云端服务。</p>
-
-        <ul class="facts">
-          <li><span class="k">版本</span><span class="v">0.1.1</span></li>
-          <li><span class="k">发布日期</span><span class="v">2026-11-08</span></li>
-          <li><span class="k">体积</span><span class="v">27.53 MB</span></li>
-          <li><span class="k">平台</span><span class="v">Windows 10 / 11 · x64</span></li>
-        </ul>
+        <h1><span class="nw">LiuHao AI OS ·</span> <span class="nw">鎏灏智能中枢</span></h1>
       </div>
 
-      <aside class="dl reveal d2" aria-label="下载安装包">
+      <div class="hero-grid">
+        <div class="reveal d2">
+          <p class="category"><strong>Human-Sovereign Agent Operating System（人类主权自主智能体 OS）</strong><br>桌面原生应用：程序与数据默认分离，数据存在本机；默认不主动联网，不收集使用统计。</p>
+          <p class="lede">装在自己的电脑上，账号和 API Key 都在本机生成、加密保存；模型可以选本机 Ollama，也可以接 OpenAI 兼容的云端服务。</p>
+
+          <ul class="facts">
+            <li><span class="k">版本</span><span class="v">0.1.1</span></li>
+            <li><span class="k">发布日期</span><span class="v">2026-11-08</span></li>
+            <li><span class="k">体积</span><span class="v">27.53 MB</span></li>
+            <li><span class="k">平台</span><span class="v">Windows 10 / 11 · x64</span></li>
+          </ul>
+        </div>
+
+        <aside class="dl reveal d3" aria-label="下载安装包">
         <div class="dl-head">
           <h2>下载安装包</h2>
           <span class="ver">0.1.1</span>
@@ -351,7 +358,8 @@
 
         <p class="warn">安装包未做代码签名，首次运行 Windows 会弹 SmartScreen 提示，这是预期行为；下载后请先核对上面的 SHA256。</p>
         <a class="altlink" href="https://github.com/yhd952700-prog/liuhao-release/releases" rel="noopener">查看全部版本与升级包 →</a>
-      </aside>
+        </aside>
+      </div>
     </section>
 
     <section class="block" id="steps">
