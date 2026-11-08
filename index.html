@@ -326,7 +326,7 @@
   <main>
     <div class="beta reveal" role="note" aria-label="内测状态提示">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 2 2 20h20L12 2Z"/><path d="M12 8v6"/><path d="M12 17h.01"/></svg>
-      <p><span class="tag">内测版</span><b>安装链路冒烟已全部 PASS（health、控制台、登录、看板、聊天），安装包签名状态 Valid。</b>尚未完成的两项：真实模型生成与流式、工具调用的安装级 E2E 正在重跑；自动升级清单尚未签发。这两项完成前，本安装包按内测版提供，仅供试用，不代表正式发布版。</p>
+      <p><span class="tag">内测版</span><b>安装链路冒烟已全部 PASS（health、控制台、登录、看板、聊天），安装包签名状态 Valid。</b>尚未完成：真实模型生成与流式、工具调用的安装级 E2E 正在重跑；当前安装包尚未内置升级公钥与清单地址，「检查更新」会提示未配置更新源。这两项完成前，本安装包按内测版提供，仅供试用，不代表正式发布版。</p>
     </div>
 
     <section class="hero">
@@ -470,6 +470,15 @@
                 <code class="inline-mono">Get-AuthenticodeSignature "D:\LiuHao-Setup-0.1.1.exe" | Format-List Status, SignerCertificate</code>。</li>
             </ul>
             <p>未导入信任时，<code>Status</code> 可能是 <code>UnknownError</code>（根证书不受信任）；成功运行随包的 <code>信任签名证书.cmd</code> 后应为 <code>Valid</code>。若仍是 <code>UnknownError</code>，说明导入未生效，请查看脚本窗口里的原因。证书主体为 <code>CN=鎏灏智能中枢, O=LiuHao AI OS, C=CN</code>，SHA-1 指纹以 <code>AE398F09</code> 开头，应与随包的 <a href="LiuHao-CodeSigning.cer" download><code>LiuHao-CodeSigning.cer</code></a> 一致。签名有效不等于文件来源可信，下载后仍请核对本页的 SHA256。</p>
+          </div>
+        </details>
+
+        <details class="reveal d2">
+          <summary><span class="pm" aria-hidden="true"></span>装完点「检查更新」提示未配置更新源，是坏了吗？</summary>
+          <div class="body">
+            <p><strong>不是。</strong>本安装包签名有效、安装链路冒烟全绿，但这一版安装包尚未内置升级公钥与清单地址，所以「检查更新」会如实提示<strong>未配置更新源</strong>，这是当前预期状态，不代表升级功能损坏。</p>
+            <p>升级清单与升级包已经签发并托管在本站 <code class="inline-mono">updates/</code> 目录，但要等注入了公钥与清单地址的下一个安装包发布后才会生效。在这之前，请直接用本页下载的安装包覆盖安装来升级。</p>
+            <p><strong>不要手工改 <code class="inline-mono">updates/LIUHAO_RELEASE.json</code>：</strong>它已被签名，改动任意一个字节都会验签失败。等新包发布后，本页会更新这一条，如实写明自动升级的可用状态与校验方式。</p>
           </div>
         </details>
 
