@@ -342,7 +342,8 @@
     .card{padding:18px 16px 16px}
     .guide-list li{padding-left:28px}
     .guide-list li::after{left:8px}
-    .cmd{padding:38px 14px 14px 15px}
+    .cmd{padding:58px 14px 14px 15px}
+    .copy{min-height:44px;padding:10px 12px}
     .verify-facts{grid-template-columns:minmax(0,1fr);gap:6px}
     .faq summary{padding:16px 15px;font-size:14.5px}
     .faq .body{padding:0 15px 18px 46px;font-size:13.5px}
@@ -367,7 +368,7 @@
   <main>
     <div class="beta reveal" role="note" aria-label="内测状态提示">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 2 2 20h20L12 2Z"/><path d="M12 8v6"/><path d="M12 17h.01"/></svg>
-      <p><span class="tag">内测版</span><b>安装链路冒烟已全部 PASS（health、控制台、登录、看板、聊天）；真 Key 的 S-06 / S-07 / S-08 已通过，未重启即可用；安装包签名状态 Valid。</b>升级信任链已就位，清单验签通过、能拒篡改，但升级发布物由升级线统一上传。本安装包仍为内测版，仅供试用，不代表正式发布版。</p>
+      <p><span class="tag">内测版</span><b>安装链路冒烟已全部 PASS（health、控制台、登录、看板、聊天）；真 Key 的 S-06 / S-07 / S-08 已通过；安装包签名状态 Valid。</b>升级信任链已就位，清单验签通过、能拒篡改，但升级发布物由升级线统一上传。本安装包仍为内测版，仅供试用，不代表正式发布版。</p>
     </div>
 
     <section class="hero">
@@ -563,7 +564,7 @@
           <summary><span class="pm" aria-hidden="true"></span>升级链路现在是什么状态？</summary>
           <div class="body">
             <p><strong>信任链已就位。</strong>升级清单采用签名发布，验签通过；清单内容被篡改、或与升级包不匹配时会被拒绝，不会静默生效。</p>
-            <p>升级清单与升级包托管在本站 <code class="inline-mono">updates/</code> 目录，由升级线统一上传与签发。页面只说明链路状态，不承诺自动升级的开放时间；需要升级时，直接用本页的安装包覆盖安装即可。</p>
+            <p>升级清单与升级包托管在本站 <code class="inline-mono">updates/</code> 目录，由升级线统一上传与签发。页面只说明链路状态，不承诺自动升级的开放时间；需要升级时，直接用本页的安装包覆盖安装；覆盖安装完成后需退出并重新启动应用，新版本才生效。</p>
             <p><strong>不要手工改 <code class="inline-mono">updates/LIUHAO_RELEASE.json</code>：</strong>它已被签名，改动任意一个字节都会验签失败。</p>
           </div>
         </details>
